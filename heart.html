@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+    }
+    #buttonclick{
+        position: absolute;
+        top: 0%;
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<script>
+    var random = [1,2,3,4,5]
+    var i = 5
+    function changeheart(){
+        if (i == 5) i = 0
+        var heart = "heart"+ random[i++] + ".mp4"
+            document.getElementById('myVideo').src = heart;
+    }
+
+    document.getElementById('buttonclick').addEventListener('click', function() {
+        changeheart();
+    });
+</script>
+
+<body>
+    <video width="100%" autoplay muted loop id="myVideo">
+        <source id="myVideo" src="heart5.mp4" type="video/mp4">
+    </video>
+    <div id="buttonclick" onclick="changeheart()">
+    </div>
+</body>
+</html>
