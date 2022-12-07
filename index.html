@@ -17,15 +17,23 @@
         top: 0%;
         height: 100%;
         width: 100%;
+        color: rgb(238, 0, 40);
+        font-size: 100px;
+        text-align: center;
+        line-height: 800px;
     }
+
+
+
 </style>
 <script>
     var random = [0,1,2,3]
     var i = 0
     function changeheart(){
         if (i == 4) i = 0
-        var heart = "heart"+ random[i++] + ".mp4"
+        var heart = "heart"+ random[++i] + ".mp4"
             document.getElementById('myVideo').src = heart;
+            document.getElementById('buttonclick').innerHTML = "";
     }
 
     document.getElementById('buttonclick').addEventListener('click', function() {
@@ -37,7 +45,9 @@
     <video width="100%" autoplay muted loop id="myVideo">
         <source id="myVideo" src="heart0.mp4" type="video/mp4">
     </video>
+  
     <div id="buttonclick" onclick="changeheart()">
     </div>
+
 </body>
 </html>
