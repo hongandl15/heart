@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart</title>
 </head>
+<script language=JavaScript>
+    var message="Do not view source please";
+    function clickIE() {if (document.all) {(message);return false;}}
+    function clickNS(e) {if
+    (document.layers||(document.getElementById&&!document.all)) {
+    if (e.which==2||e.which==3) {(message);return false;}}}
+    if (document.layers)
+    {document.captureEvents(Event.MOUSEDOWN);document.onmousedown=clickNS;}
+    else{document.onmouseup=clickNS;document.oncontextmenu=clickIE;}
+    document.oncontextmenu=new Function("return false")
+</script>
 <style>
     body{
         overflow: hidden;
@@ -25,19 +36,19 @@
 
 </style>
 <script>
-    var random = [0,1]
+    var order = [0,1]
     var i = 0
     function changeheart(){
         if (i == 1) i = 0
         else i = 1
-        var heart = "heart"+ random[i] + ".mp4"
+        var heart = "heart"+ order[i] + ".mp4"
             document.getElementById('myVideo').src = heart;
             document.getElementById('buttonclick').innerHTML = "";
     }
 
     document.getElementById('buttonclick').addEventListener('click', function() {
         changeheart();
-    });p
+    });
 </script>
 
 <body>
